@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<!-- Start: Five9 Proactive Chat section PART1-->
+
+
+      <title>Five9 Proactive Chat Sample</title>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta http-equiv="cache-control" content="no-cache">
+      <meta http-equiv="expires" content="-1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/redmond/jquery-ui.css">
+
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script>
+
+      <script type="text/javascript" src="config.js"></script>
+
+
+      <link rel="stylesheet" href="https://app.five9.com/consoles/ProactiveChat/stylesheets/five9proactivechat.css">
+      <script type="text/javascript" src="https://app.five9.com/consoles/ProactiveChat/javascripts/five9proactivechat.min.js"></script>
+
+  <!-- End: Five9 Proactive Chat section -->
+
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Five9 Demo</title>
+  </head>
+
+  <body>
+  <A href="http://api.five9.com/ivr/1/117018/campaigns/1138090/new_ivr_session"
+onclick="javascript:void window.open('http://api.five9.com/ivr/1/117018/campaigns/1138090/new_ivr_session','1424127043313','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;""><img title="Get Some Cool Help" alt="" src="https://github.com/jasonb5232/Demo/blob/master/Sign_In_-_Harvard_Business_School_and_F9demo_-_Tesla.jpg" style="height 400px width: 600px;" border="0"> </a>
+
+
+
+<!-- Start: Five9 Proactive Chat section PART2-->
+
+    <script>
+      $(document).ready(function() {
+        $('#nav-1').addClass('active');
+        $('#tenant').html(Config.tenant);
+        $('#profiles').html(Config.profiles.join(','));
+
+        var options = {
+          tenant: Config.tenant,
+          restAPI: Config.restAPI,
+          chatConsole: Config.chatConsole,
+          title: Config.title,
+          showProfiles: Config.showProfiles,
+          notificationType: 'notification' // notification, modal, callback
+        };
+        Five9ProactiveChat.init(options);
+        var parameters = {
+          pageId: 'sample-1',
+          profiles: Config.profiles,
+          fields: ['page1-f1','page1-f2','page1-f3']
+        };
+        Five9ProactiveChat.startNewPage(parameters);
+      });
+    </script>
+
+<!-- END: Five9 Proactive Chat section PART2-->
+
+  </body>
+</html>
